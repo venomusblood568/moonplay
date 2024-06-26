@@ -9,8 +9,8 @@
 4) ALGORITHM
 5) ALGORITHM VISUALIZATION
 
-to do list
--loader 
--icon
--img
--addition of new pages for each part
+# to do list
+1) loader
+2) icon
+3) img
+4) add new pages 
