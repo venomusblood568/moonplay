@@ -9,3 +9,8 @@
 4) ALGORITHM
 5) ALGORITHM VISUALIZATION
 
+to do list
+-loader 
+-icon
+-img
+-addition of new pages for each part
