@@ -1,131 +1,132 @@
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <title>MOONPLAY</title>
   <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600' rel='stylesheet' type='text/css'>
-<link rel="stylesheet" href="./style.css">
-
+  <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-<!-- partial:index.partial.html -->
-<div class='container'>
-  <header>
-    <h1>MOONPLAY</h1>
-    <p>
-      A collection of my experimental works. 
-    </p>
-    <p class='small'>
-      Explore a timeline showcasing my experimental works <a href="timeline.html">[here]</a>.
-    </p>
-  </header>
-  <main>
-    <!-- First line with three boxes -->
-    <div class='items'>
-      <div class='item'>
-        <svg preserveAspectRatio='xMidYMid slice' viewBox='0 0 300 200'>
-          <defs>
-            <clipPath id='clip-0'>
-              <circle cx='0' cy='0' fill='#000' r='150px'></circle>
-            </clipPath>
-          </defs>
-          <text class='svg-text' dy='.3em' x='50%' y='50%'>
-            GAME
-          </text>
-          <g clip-path='url(#clip-0)'>
-            <image height='100%' preserveAspectRatio='xMinYMin slice' width='100%' xlink:href='https://s3-us-west-2.amazonaws.com/s.cdpn.io/9473/i-xrays.png'></image>
-            <text class='svg-masked-text' dy='.3em' x='50%' y='50%'>
+<!--LOADER-->
+<div class="loading-container" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: #000000; display: flex; justify-content: center; align-items: center;">
+  <img id="loading-image" alt="Loading" style="max-width: 30%; max-height: 30%;">
+</div>
+<!-- Main Content -->
+<div class="content" style="display: none;">
+  <div class='container'>
+    <header>
+      <h1>MOONPLAY</h1>
+      <p>
+        A collection of my experimental works. 
+      </p>
+      <p class='small'>
+        Explore a timeline showcasing my experimental works <a href="timeline.html">[here]</a>.
+      </p>
+    </header>
+    <main>
+      <!-- First line with three boxes -->
+      <div class='items'>
+        <div class='item'>
+          <svg preserveAspectRatio='xMidYMid slice' viewBox='0 0 300 200'>
+            <defs>
+              <clipPath id='clip-0'>
+                <circle cx='0' cy='0' fill='#000' r='150px'></circle>
+              </clipPath>
+            </defs>
+            <text class='svg-text' dy='.3em' x='50%' y='50%'>
               GAME
             </text>
-          </g>
-        </svg>
-      </div>
-      <div class='item'>
-        <svg preserveAspectRatio='xMidYMid slice' viewBox='0 0 300 200'>
-          <defs>
-            <clipPath id='clip-1'>
-              <circle cx='0' cy='0' fill='#000' r='150px'></circle>
-            </clipPath>
-          </defs>
-          <text class='svg-text' dy='.3em' x='50%' y='50%'>
-            AI
-          </text>
-          <g clip-path='url(#clip-1)'>
-            <image height='100%' preserveAspectRatio='xMinYMin slice' width='100%' xlink:href='https://s3-us-west-2.amazonaws.com/s.cdpn.io/9473/i-xrays.png'></image>
-            <text class='svg-masked-text' dy='.3em' x='50%' y='50%'>
+            <g clip-path='url(#clip-0)'>
+              <image height='100%' preserveAspectRatio='xMinYMin slice' width='100%' xlink:href='https://cdn.pixabay.com/photo/2021/09/07/07/11/game-console-6603120_640.jpg'></image>
+              <text class='svg-masked-text' dy='.3em' x='50%' y='50%'>
+                GAME
+              </text>
+            </g>
+          </svg>
+        </div>
+        <div class='item'>
+          <svg preserveAspectRatio='xMidYMid slice' viewBox='0 0 300 200'>
+            <defs>
+              <clipPath id='clip-1'>
+                <circle cx='0' cy='0' fill='#000' r='150px'></circle>
+              </clipPath>
+            </defs>
+            <text class='svg-text' dy='.3em' x='50%' y='50%'>
               AI
             </text>
-          </g>
-        </svg>
-      </div>
-      <div class='item'>
-        <svg preserveAspectRatio='xMidYMid slice' viewBox='0 0 300 200'>
-          <defs>
-            <clipPath id='clip-2'>
-              <circle cx='0' cy='0' fill='#000' r='150px'></circle>
-            </clipPath>
-          </defs>
-          <text class='svg-text' dy='.3em' x='50%' y='50%'>
-            ALGORITHM
-          </text>
-          <g clip-path='url(#clip-2)'>
-            <image height='100%' preserveAspectRatio='xMinYMin slice' width='100%' xlink:href='https://s3-us-west-2.amazonaws.com/s.cdpn.io/9473/i-xrays.png'></image>
-            <text class='svg-masked-text' dy='.3em' x='50%' y='50%'>
+            <g clip-path='url(#clip-1)'>
+              <image height='100%' preserveAspectRatio='xMinYMin slice' width='100%' xlink:href='https://cdn.pixabay.com/photo/2023/02/08/21/46/futuristic-7777561_1280.jpg'></image>
+              <text class='svg-masked-text' dy='.3em' x='50%' y='50%'>
+                AI
+              </text>
+            </g>
+          </svg>
+        </div>
+        <div class='item'>
+          <svg preserveAspectRatio='xMidYMid slice' viewBox='0 0 300 200'>
+            <defs>
+              <clipPath id='clip-2'>
+                <circle cx='0' cy='0' fill='#000' r='150px'></circle>
+              </clipPath>
+            </defs>
+            <text class='svg-text' dy='.3em' x='50%' y='50%'>
               ALGORITHM
             </text>
-          </g>
-        </svg>
+            <g clip-path='url(#clip-2)'>
+              <image height='100%' preserveAspectRatio='xMinYMin slice' width='100%' xlink:href='https://cdn.pixabay.com/photo/2022/01/17/13/49/blueprint-6944719_1280.jpg'></image>
+              <text class='svg-masked-text' dy='.3em' x='50%' y='50%'>
+                ALGORITHM
+              </text>
+            </g>
+          </svg>
+        </div>
       </div>
-    </div>
-  
-    <!-- Second line with two boxes -->
-    <div class='items'>
-      <div class='item'>
-        <svg preserveAspectRatio='xMidYMid slice' viewBox='0 0 300 200'>
-          <defs>
-            <clipPath id='clip-3'>
-              <circle cx='0' cy='0' fill='#000' r='150px'></circle>
-            </clipPath>
-          </defs>
-          <text class='svg-text' dy='.3em' x='50%' y='50%'>
-            GAME-AI
-          </text>
-          <g clip-path='url(#clip-3)'>
-            <image height='100%' preserveAspectRatio='xMinYMin slice' width='100%' xlink:href='https://s3-us-west-2.amazonaws.com/s.cdpn.io/9473/i-xrays.png'></image>
-            <text class='svg-masked-text' dy='.3em' x='50%' y='50%'>
+      <!-- Second line with two boxes -->
+      <div class='items'>
+        <div class='item'>
+          <svg preserveAspectRatio='xMidYMid slice' viewBox='0 0 300 200'>
+            <defs>
+              <clipPath id='clip-3'>
+                <circle cx='0' cy='0' fill='#000' r='150px'></circle>
+              </clipPath>
+            </defs>
+            <text class='svg-text' dy='.3em' x='50%' y='50%'>
               GAME-AI
             </text>
-          </g>
-        </svg>
-      </div>
-      <div class='item'>
-        <svg preserveAspectRatio='xMidYMid slice' viewBox='0 0 300 200'>
-          <defs>
-            <clipPath id='clip-4'>
-              <circle cx='0' cy='0' fill='#000' r='150px'></circle>
-            </clipPath>
-          </defs>
-          <text class='svg-text' dy='.3em' x='50%' y='50%'>
-            DATA VISUALIZATION
-          </text>
-          <g clip-path='url(#clip-4)'>
-            <image height='100%' preserveAspectRatio='xMinYMin slice' width='100%' xlink:href='https://s3-us-west-2.amazonaws.com/s.cdpn.io/9473/i-xrays.png'></image>
-            <text class='svg-masked-text' dy='.3em' x='50%' y='50%'>
-              X-rays
+            <g clip-path='url(#clip-3)'>
+              <image height='100%' preserveAspectRatio='xMinYMin slice' width='100%' xlink:href='https://cdn.pixabay.com/photo/2024/04/09/16/30/ai-generated-8686301_1280.jpg'></image>
+              <text class='svg-masked-text' dy='.3em' x='50%' y='50%'>
+                GAME-AI
+              </text>
+            </g>
+          </svg>
+        </div>
+        <div class='item'>
+          <svg preserveAspectRatio='xMidYMid slice' viewBox='0 0 300 200'>
+            <defs>
+              <clipPath id='clip-4'>
+                <circle cx='0' cy='0' fill='#000' r='150px'></circle>
+              </clipPath>
+            </defs>
+            <text class='svg-text' dy='.3em' x='50%' y='50%'>
+              DATA VISUALIZATION
             </text>
-          </g>
-        </svg>
+            <g clip-path='url(#clip-4)'>
+              <image height='100%' preserveAspectRatio='xMinYMin slice' width='100%' xlink:href='https://cdn.pixabay.com/photo/2017/09/06/21/31/data-2723105_1280.jpg'></image>
+              <text class='svg-masked-text' dy='.3em' x='50%' y='50%'>
+                DATA VISUALIZATION
+              </text>
+            </g>
+          </svg>
+        </div>
       </div>
-    </div>
-  </main>
-  
+    </main>
+  </div>
+  <div class='options'>
+    <button class='dark'></button>
+    <button class='light'></button>
+  </div>
 </div>
-<div class='options'>
-  <button class='dark'></button>
-  <button class='light'></button>
-</div>
-<!-- partial -->
-  <script  src="./script.js"></script>
-
+<script src="./script.js"></script>
 </body>
 </html>
