@@ -25,7 +25,7 @@ a:hover {
 
 p {
   font-size: 1.2rem;
-  color: rgba(245, 245, 245, 0.5);
+  color: white;
 }
 
 .small {
@@ -141,15 +141,16 @@ button.light {
 }
 
 .light {
-  background-color: #484b6a;
+  background-color: #D6DAC8;
   color: #1a1a1a;
+  text-color : black
 }
 .light p {
-  color: rgba(26, 26, 26, 0.5);
+  color: black;
 }
 .light .item {
-  background: #f5f5f5;
+  background: #FBF3D5;
 }
 .light .svg-text {
-  fill: rgba(0, 0, 0, 0.1);
+  fill: black;
 }
