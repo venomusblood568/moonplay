@@ -45,3 +45,28 @@ Item.prototype = {
 [].slice.call(document.querySelectorAll('button'), 0).forEach(function (button) {
   button.addEventListener('click', changeColor);
 });
+
+//loading screen js part 
+
+// Replace this URL with the image URL you want to fetch
+const imageUrl = "https://i.pinimg.com/originals/7a/c0/b9/7ac0b96856333b70ecadc4cff902a5b7.gif";
+
+// Get a reference to the image element
+const imageElement = document.getElementById("loading-image");
+
+// Set the image source to the specified URL
+imageElement.src = imageUrl;
+
+// JavaScript to hide the loading screen after 6 seconds (approx) because that's the total length of the gif
+window.onload = function () {
+  setTimeout(function () {
+    document.querySelector('.loading-container').style.display = 'none';
+    document.querySelector('.content').style.display = 'block';
+    // Create and append the "Begin" button
+    const beginButton = document.createElement("button");
+    beginButton.className = "start-button";
+    beginButton.textContent = "Load the project's";
+    beginButton.onclick = beginAnimation;
+    document.body.appendChild(beginButton);
+  }, 3000); 
+};
