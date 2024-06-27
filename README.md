@@ -10,7 +10,7 @@
 5) ALGORITHM VISUALIZATION
 
 # to do list
-1) loader
+1) snake game 
 2) icon
-3) img
+3) add social link 
 4) add new pages 
