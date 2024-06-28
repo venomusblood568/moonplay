@@ -1,5 +1,7 @@
 body {
-    background-color: black;
+    background: url('https://images.unsplash.com/photo-1570876050997-2fdefb00c004?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+    background-size: cover; /* Cover the entire background */
+    background-position: center; /* Center the background image */
     color: white;
     margin: 0;
     text-align: center;
@@ -14,6 +16,7 @@ body {
     box-sizing: border-box;
     padding: 20px;
     margin: 0 auto;
+    opacity: 0.7;
 }
 
 .player {
