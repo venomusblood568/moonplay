@@ -11,7 +11,7 @@
 }
 
 body {
-  background: url('https://img.freepik.com/free-photo/modern-background-with-lines_1361-3533.jpg?w=1800&t=st=1719559640~exp=1719560240~hmac=e0b74e4abc5910e5efd788a609f4045e74e0218ae62b3527c09d6f44057eb95a');
+  background: url('/img/black .avif');
   background-size: cover; /* Cover the entire background */
   background-position: center; /* Center the background image */
   color: #f5f5f5;
