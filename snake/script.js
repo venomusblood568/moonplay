@@ -1,12 +1,15 @@
 document.addEventListener('DOMContentLoaded', function() {
     const player = document.querySelector(".player");
     const gameFrame = document.querySelector(".game-frame");
+    const scoreDisplay = document.querySelector(".score-count");
+
     const gameFrameRect = gameFrame.getBoundingClientRect();
     const playerRect = player.getBoundingClientRect();
 
     let playerX = playerRect.left - gameFrameRect.left;
     let playerY = playerRect.top - gameFrameRect.top;
-
+    let score = 0;
+    
     function updatePlayerPosition() {
         player.style.left = playerX + 'px';
         player.style.top = playerY + 'px';
@@ -23,6 +26,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         food.style.left = randomX + 'px';
         food.style.top = randomY + 'px';
+
 
         gameFrame.appendChild(food);
     }
@@ -42,7 +46,8 @@ document.addEventListener('DOMContentLoaded', function() {
         ) {
             food.remove();
             createFood();
-        }
+            score++;
+            scoreDisplay.textContent = "Score count : " + score;        }
     }
 
 
