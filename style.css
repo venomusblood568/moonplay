@@ -11,7 +11,9 @@
 }
 
 body {
-  background-color: black;
+  background: url('https://img.freepik.com/free-photo/modern-background-with-lines_1361-3533.jpg?w=1800&t=st=1719559640~exp=1719560240~hmac=e0b74e4abc5910e5efd788a609f4045e74e0218ae62b3527c09d6f44057eb95a');
+  background-size: cover; /* Cover the entire background */
+  background-position: center; /* Center the background image */
   color: #f5f5f5;
 }
 
@@ -118,17 +120,17 @@ button {
   width: 12px;
   height: 12px;
   border: none;
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
+  appearance: none;
   box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.5);
   border-radius: 1px;
 }
+
 button.dark {
   background-color: #2f3238;
 }
+
 button.light {
-  background-color: #484b6a;
+  background-color: #D6DAC8;
 }
 
 .options {
@@ -136,6 +138,7 @@ button.light {
   top: 1rem;
   right: 1rem;
 }
+
 .options button {
   margin-left: 0.5rem;
 }
@@ -143,14 +146,22 @@ button.light {
 .light {
   background-color: #D6DAC8;
   color: #1a1a1a;
-  text-color : black
 }
+
 .light p {
   color: black;
 }
+
 .light .item {
   background: #FBF3D5;
 }
+
 .light .svg-text {
   fill: black;
+}
+
+body.light {
+  background : url("https://img.freepik.com/free-vector/seamless-white-round-geometric-patterned-background-design-resource-vector_53876-143404.jpg?t=st=1719594974~exp=1719598574~hmac=cab97a06e4695fc8f12de071585e40354ee9ed0c207e777479eb2886aaeca3d3&w=1800");
+  background-size: cover; /* Cover the entire background */
+  background-position: center; /* Center the background image */
 }
