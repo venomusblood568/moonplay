@@ -12,4 +12,5 @@
 # to do list
 1) add snake length and game over situation
 2) Tic-tac-toe
-3) still thinking what to add
+3) add advance snake
+4) still thinking what to add
