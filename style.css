@@ -165,3 +165,50 @@ body.light {
   background-size: cover; /* Cover the entire background */
   background-position: center; /* Center the background image */
 }
+
+footer {
+  padding: 4rem 0 2em;
+  width: calc(min(87.5rem, 90%));
+  margin: 0 auto;
+
+  p {
+    margin-right: 1em;
+  }
+
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 1em;
+
+    a {
+      text-transform: capitalize;
+      color: #333;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  div {
+    flex-wrap: wrap;
+    position: relative;
+
+    &::before {
+      position: absolute;
+      content: "";
+      top: -1.875rem;
+      left: 0;
+      width: 100%;
+      height: 0.063rem;
+      background: #ddd;
+      display: block;
+    }
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
