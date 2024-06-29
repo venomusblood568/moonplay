@@ -10,7 +10,6 @@
 5) ALGORITHM VISUALIZATION
 
 # to do list
-1) snake game 
-2) icon
-3) add social link 
-4) add new pages 
+1) add snake length and game over situation
+2) Tic-tac-toe
+3) still thinking what to add
