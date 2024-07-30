@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @import url(https://fonts.googleapis.com/css?family=Inconsolata);
+        html,
+        body {
+            background: rgb(0, 0, 0);
+            font-family: "Inconsolata", sans-serif;
+        }
+        .wrap {
+            top: 40%;
+            left: 50%;
+            width: 300px;
+            height: 200px;
+            margin-left: -150px;
+            margin-top: -100px;
+            position: absolute;
+        }
+        code {
+            color: white;
+        }
+        span.blue {
+            color: #48beef;
+        }
+        span.comment {
+            color: #7f8c8d;
+        }
+        span.green {
+            color: #2ecc71;
+        }
+        span.orange {
+            color: #e67e22;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="404">
+            <pre><code>
+<span class="green">&lt;!</span><span>DOCTYPE html</span><span class="green">&gt;</span>
+<span class="orange">&lt;html&gt;</span>
+    <span class="orange">&lt;style&gt;</span>
+        * {
+            <span class="green">everything</span>:<span class="blue">awesome</span>;
+        }
+    <span class="orange">&lt;/style&gt;</span>
+<span class="orange">&lt;body&gt;</span> 
+    <span class="comment">// 404 Error: Page Not Found</span>
+    <span class="comment">// This page is under development</span>
+    <br><br>
+    (<span class="blue">function</span>( inDevelopment ) {
+        <span class="blue">function</span> showError() {
+            <span class="blue">if</span>( inDevelopment ) {
+                <span class="blue">return</span> <span class="comment">// Page is still being worked on</span>;
+            }
+            <span class="comment">// Display error message</span>
+        }
+        window.addEventListener( <span class="green">'load'</span>, showError );
+    }( <span class="blue">true</span> ));
+<span class="orange">&lt;/body&gt;</span> 
+<span class="orange">&lt;/html&gt;</span>
+            </code></pre>
+        </div>
+    </div>
+</body>
+</html>
