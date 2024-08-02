@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/img/logo4.png">
+    <link rel="stylesheet" href="/Lorens_attractor/styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js" type="text/javascript" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <title>Lorenz Attractor</title>
+</head>
+<body>
+    <div class="split left">
+        <div class="centered">
+            <img src="https://upload.wikimedia.org/wikipedia/en/d/dc/Edward_lorenz.jpg" alt="Edward_lorenz">
+            <h2>Edward Norton Lorenz</h2>
+            <p>Lorenz’s Attractor</p>  
+            <p>
+                In 1961, Edward Lorenz was using a computer to simulate weather patterns with 12 variables. To save time, he restarted the simulation from a midpoint using rounded data from an earlier run. The original simulation used six decimal places, but the printout rounded numbers to three decimals.
+                <br><br>
+                When he used the rounded data, the weather predictions were completely different. This showed that even tiny changes in the starting conditions could lead to vastly different results, a phenomenon now known as the "butterfly effect" in chaos theory.
+                <br><br>
+                The term "butterfly effect" in popular media may stem from the real-world implications of the Lorenz attractor, namely that several different initial chaotic conditions evolve in phase space in a way that never repeats, so all chaos is unpredictable. This underscores that chaotic systems can be completely deterministic and yet still be inherently unpredictable over long periods of time. Because chaos continually increases in systems, it is impossible to predict the future of systems well. For instance, even the small flap of a butterfly's wings could set the world on a vastly different trajectory, such as by causing a hurricane. The shape of the Lorenz attractor itself, when plotted in phase space, may also be seen to resemble a butterfly.
+            </p>
+            <p>
+                Lorenz’s discovery, which introduced the concept of Lorenz attractors, showed that precise long-term weather predictions are generally impossible, even with detailed atmospheric models. His work demonstrated that small changes in initial conditions can lead to drastically different outcomes, highlighting the inherent uncertainty in long-term forecasting.            </p>
+            <img src="./Screenshot 1946-05-11 at 6.16.25 PM.png" alt="Edward_lorenz">
+            <p>
+                The equations relate the properties of a two-dimensional fluid layer uniformly warmed from below and cooled from above. In particular, the equations describe the rate of change of three quantities with respect to time: x is proportional to the rate of convection, y to the horizontal temperature variation, and z to the vertical temperature variation.[3] The constants σ, ρ, and β are system parameters proportional to the Prandtl number, Rayleigh number, and certain physical dimensions of the layer itself.[3]
+            </p>
+            <p>Lorenz used the following values for these parameters:</p>
+            <p>In the Lorenz system, it is commonly assumed that the parameters <code>σ</code>, <code>ρ</code>, and <code>β</code> are positive.</p>            <div class="code">
+                σ = 10<br>
+                β = 8 / 3<br>
+                ρ = 28
+            </div>
+            <p>For these values (and nearby values), the system exhibits chaotic behavior.</p>
+
+        </div>
+    </div>
+    
+    <div class="split right">
+        <!-- This is where the canvas will be placed -->
+        <canvas id="lorenzCanvas"></canvas>
+    </div>  
+    
+    <script src="https://d3js.org/d3.v3.min.js" defer></script>
+    <script src="./script.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+body {
+    background: #000;
+    height: 100vh; 
+    margin: 0; /* Ensure no margin around the body */
+    font-family: 'Space Mono';
+  }
+  
+  .split {
+      height: 100%;
+      width: 50%;
+      position: fixed;
+      z-index: 1;
+      top: 0;
+      overflow: hidden; /* Ensure content does not overflow */
+      padding: 20px;
+      box-sizing: border-box; /* Include padding in width calculation */
+  }
+  
+  .left {
+      left: 0;
+      background-color: #111;
+      color: #fff;
+      display: flex;
+      align-items: flex-start; /* Align content to the top */
+      justify-content: center;
+      text-align: center;
+      overflow-y: auto; /* Allow vertical scrolling */
+  }
+  
+  .text-content {
+      max-height: 100%; /* Ensure container does not exceed the available height */
+  }
+  
+  .right {
+      right: 0;
+      background-color: #000; /* Ensure the background is consistent with the rest of the page */
+  }
+  
+  canvas {
+      width: 100%; /* Make canvas fill the right side */
+      height: 100%; /* Make canvas fill the right side */
+  }
+  
