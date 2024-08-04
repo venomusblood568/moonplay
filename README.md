@@ -1,6 +1,7 @@
 # Project - MoonPlay
 
-## project for Buildspace s5 => right now just as side project and might make it serious project 
+## right now just as side project and might make it serious project 
+# only open in pc or Desktop
 
 # CONTENT OF THE MOONPLAY
 1) GAME
