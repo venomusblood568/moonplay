@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/img/logo4.png">
+    <link rel="stylesheet" href="/Aizawa_attractor/styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js" type="text/javascript" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <title>Aizawa Attractor</title>
+</head>
+<body>
+    <div class="split left">
+        <div class="text-content">
+            <h1>The Aizawa Attractor</h1>
+            <p>
+                The Aizawa Attractor is a type of strange attractor that arises from a set of nonlinear differential equations. 
+                It was introduced by K. Aizawa and is known for its complex and beautiful chaotic behavior. The attractor can be 
+                visualized in three-dimensional space, revealing intricate patterns that are sensitive to initial conditions.
+            </p>
+            <div class="equation">
+                <!-- Use MathJax to render LaTeX equations -->
+                <script id="MathJax-config" type="text/x-mathjax-config">
+                    MathJax.Hub.Config({
+                        tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]} 
+                    });
+                </script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
+                <p>
+                    \[
+                    \begin{align*}
+                    \frac{dx}{dt} &= (z - b) x - d y \\
+                    \frac{dy}{dt} &= d x + (z - b) y \\
+                    \frac{dz}{dt} &= c + a z - \frac{z^3}{3} - (x^2 + y^2) (1 + e z) + f z x^3
+                    \end{align*}
+                    \]
+                </p>
+            </div>
+            <p>
+                Typical parameter values that result in chaotic behavior are:
+            </p>
+            <ul>
+                <li>\( a = 0.95 \)</li>
+                <li>\( b = 0.7 \)</li>
+                <li>\( c = 0.6 \)</li>
+                <li>\( d = 3.5 \)</li>
+                <li>\( e = 0.25 \)</li>
+                <li>\( f = 0.1 \)</li>
+            </ul>
+        </div>
+    </div>
+    
+    <div class="split right">
+        <!-- This is where the canvas will be placed -->
+        <div id="lorenz-attractor"></div>
+    </div>  
+    
+    <script src="https://d3js.org/d3.v3.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script> <!-- Update this to match the version you're using -->
+    <script src="/Aizawa_attractor/script.js" defer></script>
+</body>
+</html>

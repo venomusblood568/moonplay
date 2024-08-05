@@ -1,0 +1,84 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden; /* Prevent scrolling */
+    font-family: 'Space Mono', monospace;
+}
+
+.split {
+    height: 100%;
+    width: 50%;
+    position: fixed;
+    top: 0;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.left {
+    left: 0;
+    background-color: grey; /* Set background color with opacity */
+    color: #fff;
+    display: flex;
+    align-items: center; /* Center content vertically */
+    justify-content: center; /* Center content horizontally */
+    text-align: center;
+    z-index: 1; /* Ensure it is above the right side */
+}
+
+.text-content {
+    max-height: 100%; /* Ensure container does not exceed available height */
+    overflow-y: auto; /* Allow vertical scrolling if needed */
+    padding: 20px; /* Add some padding for spacing */
+     /* Ensure it has a background with opacity */
+    border-radius: 10px;
+}
+
+.right {
+    right: 0;
+    background-color: #000;
+    width: 50%; /* Ensure it takes up the right half of the viewport */
+    height: 100%;
+    z-index: 0; /* Ensure it is below the left side */
+    display: flex;
+    justify-content: center; /* Center the canvas horizontally */
+    align-items: center; /* Center the canvas vertically */
+    overflow: hidden; /* Prevent overflow */
+}
+
+#lorenz-attractor {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+canvas {
+    width: 100%;
+    height: 100%;
+}
+
+.container {
+    text-align: center;
+    max-width: 800px;
+    padding: 20px;
+    background-color: rgba(17, 17, 17, 0.5);
+    border-radius: 10px;
+}
+
+h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+.equation {
+    font-size: 1em;
+    margin: 20px 0;
+}
