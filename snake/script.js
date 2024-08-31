@@ -1,89 +1,224 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const player = document.querySelector(".player");
-    const gameFrame = document.querySelector(".game-frame");
-    const scoreDisplay = document.querySelector(".score-count");
+/**
+ * Namespace
+ */
+var Game      = Game      || {};
+var Keyboard  = Keyboard  || {}; 
+var Component = Component || {};
 
-    const gameFrameRect = gameFrame.getBoundingClientRect();
-    const playerRect = player.getBoundingClientRect();
+/**
+ * Keyboard Map
+ */
+Keyboard.Keymap = {
+  37: 'left',
+  38: 'up',
+  39: 'right',
+  40: 'down'
+};
 
-    let playerX = playerRect.left - gameFrameRect.left;
-    let playerY = playerRect.top - gameFrameRect.top;
-    let score = 0;
+/**
+ * Keyboard Events
+ */
+Keyboard.ControllerEvents = function() {
+  
+  // Setts
+  var self      = this;
+  this.pressKey = null;
+  this.keymap   = Keyboard.Keymap;
+  
+  // Keydown Event
+  document.onkeydown = function(event) {
+    self.pressKey = event.which;
+  };
+  
+  // Get Key
+  this.getKey = function() {
+    return this.keymap[this.pressKey];
+  };
+};
+
+/**
+ * Game Component Stage
+ */
+Component.Stage = function(canvas, conf) {  
+  
+  // Sets
+  this.keyEvent  = new Keyboard.ControllerEvents();
+  this.width     = canvas.width;
+  this.height    = canvas.height;
+  this.length    = [];
+  this.food      = {};
+  this.score     = 0;
+  this.direction = 'right';
+  this.conf      = {
+    cw   : 10,
+    size : 5,
+    fps  : 1000
+  };
+  
+  // Merge Conf
+  if (typeof conf == 'object') {
+    for (var key in conf) {
+      if (conf.hasOwnProperty(key)) {
+        this.conf[key] = conf[key];
+      }
+    }
+  }
+  
+};
+
+/**
+ * Game Component Snake
+ */
+Component.Snake = function(canvas, conf) {
+  
+  // Game Stage
+  this.stage = new Component.Stage(canvas, conf);
+  
+  // Init Snake
+  this.initSnake = function() {
     
-    function updatePlayerPosition() {
-        player.style.left = playerX + 'px';
-        player.style.top = playerY + 'px';
-    }
+    // Itaration in Snake Conf Size
+    for (var i = 0; i < this.stage.conf.size; i++) {
+      
+      // Add Snake Cells
+      this.stage.length.push({x: i, y:0});
+		}
+	};
+  
+  // Call init Snake
+  this.initSnake();
+  
+  // Init Food  
+  this.initFood = function() {
+		
+    // Add food on stage
+    this.stage.food = {
+			x: Math.round(Math.random() * (this.stage.width - this.stage.conf.cw) / this.stage.conf.cw), 
+			y: Math.round(Math.random() * (this.stage.height - this.stage.conf.cw) / this.stage.conf.cw), 
+		};
+	};
+  
+  // Init Food
+  this.initFood();
+  
+  // Restart Stage
+  this.restart = function() {
+    this.stage.length            = [];
+    this.stage.food              = {};
+    this.stage.score             = 0;
+    this.stage.direction         = 'right';
+    this.stage.keyEvent.pressKey = null;
+    this.initSnake();
+    this.initFood();
+  };
+};
 
-    function createFood() {
-        const food = document.createElement('div');
-        food.classList.add('food');
-
-        const maxX = gameFrameRect.width - 20; // Adjusted for food size
-        const maxY = gameFrameRect.height - 20; // Adjusted for food size
-        const randomX = Math.floor(Math.random() * maxX);
-        const randomY = Math.floor(Math.random() * maxY);
-
-        food.style.left = randomX + 'px';
-        food.style.top = randomY + 'px';
-
-
-        gameFrame.appendChild(food);
-    }
-
-    function checkCollision() {
-        const food = document.querySelector('.food');
-        if (!food) return;
-
-        const foodRect = food.getBoundingClientRect();
-        const playerRect = player.getBoundingClientRect();
-
-        if (
-            playerRect.left < foodRect.left + foodRect.width &&
-            playerRect.right > foodRect.left &&
-            playerRect.top < foodRect.top + foodRect.height &&
-            playerRect.bottom > foodRect.top
-        ) {
-            food.remove();
-            createFood();
-            score++;
-            scoreDisplay.textContent = "Score count : " + score;        }
-    }
-
-
-    document.addEventListener('keydown', function(event) {
-        const step = 10;
-
-        switch(event.key) {
-            case 'ArrowUp':
-                if (playerY > 0) {
-                    playerY -= step;
-                    updatePlayerPosition();
-                }
-                break;
-            case 'ArrowDown':
-                if (playerY < gameFrameRect.height - playerRect.height) {
-                    playerY += step;
-                    updatePlayerPosition();
-                }
-                break;
-            case 'ArrowLeft':
-                if (playerX > 0) {
-                    playerX -= step;
-                    updatePlayerPosition();
-                }
-                break;
-            case 'ArrowRight':
-                if (playerX < gameFrameRect.width - playerRect.width) {
-                    playerX += step;
-                    updatePlayerPosition();
-                }
-                break;   
-        }
-        checkCollision();
-    });
-
+/**
+ * Game Draw
+ */
+Game.Draw = function(context, snake) {
+  
+  // Draw Stage
+  this.drawStage = function() {
     
-    createFood();
-    updatePlayerPosition();
-});
+    // Check Keypress And Set Stage direction
+    var keyPress = snake.stage.keyEvent.getKey(); 
+    if (typeof(keyPress) != 'undefined') {
+      snake.stage.direction = keyPress;
+    }
+    
+    // Draw White Stage
+		context.fillStyle = "black";
+		context.fillRect(0, 0, snake.stage.width, snake.stage.height);
+		
+    // Snake Position
+    var nx = snake.stage.length[0].x;
+		var ny = snake.stage.length[0].y;
+		
+    // Add position by stage direction
+    switch (snake.stage.direction) {
+      case 'right':
+        nx++;
+        break;
+      case 'left':
+        nx--;
+        break;
+      case 'up':
+        ny--;
+        break;
+      case 'down':
+        ny++;
+        break;
+    }
+    
+    // Check Collision
+    if (this.collision(nx, ny) == true) {
+      snake.restart();
+      return;
+    }
+    
+    // Logic of Snake food
+    if (nx == snake.stage.food.x && ny == snake.stage.food.y) {
+      var tail = {x: nx, y: ny};
+      snake.stage.score++;
+      snake.initFood();
+    } else {
+      var tail = snake.stage.length.pop();
+      tail.x   = nx;
+      tail.y   = ny;	
+    }
+    snake.stage.length.unshift(tail);
+    
+    // Draw Snake
+    for (var i = 0; i < snake.stage.length.length; i++) {
+      var cell = snake.stage.length[i];
+      this.drawCell(cell.x, cell.y);
+    }
+    
+    // Draw Food
+    this.drawCell(snake.stage.food.x, snake.stage.food.y);
+    
+    // Draw Score
+    context.fillText('Score: ' + snake.stage.score, 5, (snake.stage.height - 5));
+  };
+  
+  // Draw Cell
+  this.drawCell = function(x, y) {
+    context.fillStyle = 'rgb(170, 170, 170)';
+    context.beginPath();
+    context.arc((x * snake.stage.conf.cw + 6), (y * snake.stage.conf.cw + 6), 4, 0, 2*Math.PI, false);    
+    context.fill();
+  };
+  
+  // Check Collision with walls
+  this.collision = function(nx, ny) {  
+    if (nx == -1 || nx == (snake.stage.width / snake.stage.conf.cw) || ny == -1 || ny == (snake.stage.height / snake.stage.conf.cw)) {
+      return true;
+    }
+    return false;    
+	}
+};
+
+
+/**
+ * Game Snake
+ */
+Game.Snake = function(elementId, conf) {
+  
+  // Sets
+  var canvas   = document.getElementById(elementId);
+  var context  = canvas.getContext("2d");
+  var snake    = new Component.Snake(canvas, conf);
+  var gameDraw = new Game.Draw(context, snake);
+  
+  // Game Interval
+  setInterval(function() {gameDraw.drawStage();}, snake.stage.conf.fps);
+};
+
+
+/**
+ * Window Load
+ */
+window.onload = function() {
+  var snake = new Game.Snake('stage', {fps: 100, size: 4});
+};
