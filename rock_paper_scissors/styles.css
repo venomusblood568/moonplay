@@ -1,0 +1,159 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
+
+body {
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background: linear-gradient(90deg, hsla(186, 33%, 94%, 1) 0%, hsla(216, 41%, 79%, 1) 100%);  overflow: hidden;
+}
+
+.game-container {
+  text-align: center;
+  background: rgba(133, 142, 150, 0.6);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+  
+}
+
+h1 {
+  color: #4a4a4a;
+  margin-bottom: 2rem;
+  font-size: 2.5rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  
+}
+
+.choices {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.choice {
+  background: none;
+  border: none;
+  cursor: pointer;
+  perspective: 1000px;
+}
+
+.choice-inner {
+  width: 100px;
+  height: 100px;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.choice:hover .choice-inner {
+  transform: rotateY(180deg);
+}
+
+.choice-front,
+.choice-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+.choice-front {
+  background-color: #D7E7F7;
+}
+
+.choice-back {
+  background-color: #B9DEFF;
+  color: black;
+  transform: rotateY(180deg);
+  font-weight: bold;
+}
+
+.icon {
+  width: 60px;
+  height: 60px;
+  stroke: black ;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  fill: none;
+}
+
+.message {
+  background-color: #B9DEFF;
+  color: black;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  display: inline-block;
+  font-weight: bold;
+  animation: pulse 1.5s infinite;
+}
+.resetGame{
+    background-color:#B9DEFF;
+    color: black;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    display: inline-block;
+    font-weight: bold;
+    animation: pulse 1.5s infinite;
+  }
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.result {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  font-size: 1.2rem;
+  color: #4a4a4a;
+  height: 100px;
+}
+
+.score {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+  font-weight: bold;
+  color: #4a4a4a;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-5px);
+  }
+  75% {
+    transform: translateX(5px);
+  }
+}

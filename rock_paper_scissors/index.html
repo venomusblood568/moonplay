@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/img/logo4.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+    <link rel="stylesheet" href="/rock_paper_scissors/styles.css">
+    <title>RPS</title>
+</head>
+<body>
+    <div class="game-container">
+        <h1 style="color: black;"> Rock |  Paper | Scissors </h1>
+        <div class="choices">
+          <button class="choice" data-choice="rock">
+            <div class="choice-inner">
+              <div class="choice-front">
+                <svg viewBox="0 0 24 24" class="icon">
+                  <path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z" />
+                  <path d="m15 5 4 4" />
+                </svg>
+              </div>
+              <div class="choice-back">Rock</div>
+            </div>
+          </button>
+          <button class="choice" data-choice="paper">
+            <div class="choice-inner">
+              <div class="choice-front">
+                <svg viewBox="0 0 24 24" class="icon">
+                  <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z" />
+                  <polyline points="14 2 14 8 20 8" />
+                </svg>
+              </div>
+              <div class="choice-back">Paper</div>
+            </div>
+          </button>
+          <button class="choice" data-choice="scissors">
+            <div class="choice-inner">
+              <div class="choice-front">
+                <svg viewBox="0 0 24 24" class="icon">
+                  <circle cx="6" cy="6" r="3" />
+                  <circle cx="6" cy="18" r="3" />
+                  <line x1="20" y1="4" x2="8.12" y2="15.88" />
+                  <line x1="14.47" y1="14.48" x2="20" y2="20" />
+                  <line x1="8.12" y1="8.12" x2="12" y2="12" />
+                </svg>
+              </div>
+              <div class="choice-back">Scissors</div>
+            </div>
+          </button>
+        </div>
+        <div class="message">Choose your weapon</div>
+        <div id="result" class="result"></div>
+        <div class="score">
+          <span id="player-score">Player: 0</span>
+          <span id="computer-score">Computer: 0</span>
+        </div>
+        <br><br><br>
+        <div id = 'reset-button'class="resetGame">Restart the game</div>
+      </div>
+</body>
+<script src="/rock_paper_scissors/script.js"></script>
+</html>
