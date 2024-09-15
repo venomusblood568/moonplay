@@ -2,154 +2,116 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>MOONPLAY</title>
-  <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600' rel='stylesheet' type='text/css'>
-  <link rel="icon" href="/img/logo4.png">
+  <title>Moonplay</title>
   <link rel="stylesheet" href="./style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="img/logo4.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css"/>
 </head>
 <body>
-<!--LOADER-->
-<div class="loading-container" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: #000000; display: flex; justify-content: center; align-items: center;">
-  <img id="loading-image" alt="Loading" style="max-width: 30%; max-height: 30%;">
-</div>
-<!-- Main Content -->
-<div class="content" style="display: none;">
-  <div class="main-content">
-    <div class='container'>
-      <header>
-        <h1>MOONPLAY</h1>
-        <p>
-          A collection of my experimental works. 
-        </p>
-        <p class='small'>
-          Explore a timeline showcasing my experimental works <a href="timeline.html">[here]</a>.
-        </p>
-      </header>
-      <main>
-        <!-- First line with three boxes -->
-        <div class='items'>
-          <div class='item'>
+    <!-- Loader Container -->
+    <div class="loading-container" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgb(0, 0, 0); display: flex; justify-content: center; align-items: center; z-index: 99999;"> 
+        <img id="loading-image" src="/path-to-your-loader.gif" alt="Loading" style="max-width: 8000px; max-height: 8000px;">
+    </div>
+
+    <!-- Dark Mode Switch -->
+    <div class="theme-switch-wrapper">
+        <span id="toggle-icon">
+            <span class="toggle-text">Light Mode</span>
+            <i class="fas fa-sun"></i>
+        </span>
+        <label class="theme-switch">
+            <input type="checkbox">
+            <div class="slider round"></div>
+        </label>
+    </div>
+
+    <!-- Navigation -->
+    <nav id="nav">
+        <a href="#home">HOME</a>  
+        <a href="#projects">PROJECTS</a>
+        <a href="#about">ABOUT</a>
+        <a href="timeline.html">TIMELINE</a>
+        <a href="#contact">CONTACT</a>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home">
+        <div class="title-group">
+            <h1>MoonPlay</h1>
+            <h2>play learn and inspire</h2>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <h1>Different Category</h1>
+        <div class="about-container">
+            <!-- Existing Cards -->
             <a href="game.html">
-              <svg preserveAspectRatio='xMidYMid slice' viewBox='0 0 300 200'>
-                <defs>
-                  <clipPath id='clip-0'>
-                    <circle cx='0' cy='0' fill='#000' r='150px'></circle>
-                  </clipPath>
-                </defs>
-                <text class='svg-text' dy='.3em' x='50%' y='50%'>
-                  GAME
-                </text>
-                <g clip-path='url(#clip-0)'>
-                  <image height='100%' preserveAspectRatio='xMinYMin slice' width='100%' xlink:href='https://cdn.pixabay.com/photo/2021/09/07/07/11/game-console-6603120_640.jpg'></image>
-                  <text class='svg-masked-text' dy='.3em' x='50%' y='50%'>
-                    GAME
-                  </text>
-                </g>
-              </svg>
+                <div class="image-container">
+                    <h2>Game</h2>
+                    <img src="/img/game.png" alt="Game">
+                    <p>Realm of games</p>
+                </div>
             </a>
-          </div>
-          <div class='item'>
             <a href="error.html">
-              <svg preserveAspectRatio='xMidYMid slice' viewBox='0 0 300 200'>
-                <defs>
-                  <clipPath id='clip-1'>
-                    <circle cx='0' cy='0' fill='#000' r='150px'></circle>
-                  </clipPath>
-                </defs>
-                <text class='svg-text' dy='.3em' x='50%' y='50%'>
-                  AI
-                </text>
-                <g clip-path='url(#clip-1)'>
-                  <image height='100%' preserveAspectRatio='xMinYMin slice' width='100%' xlink:href='https://cdn.pixabay.com/photo/2023/02/08/21/46/futuristic-7777561_1280.jpg'></image>
-                  <text class='svg-masked-text' dy='.3em' x='50%' y='50%'>
-                    AI
-                  </text>
-                </g>
-              </svg>
+            <div class="image-container">
+                <h2>Ai</h2>
+                <img src="img/ai.png">
+                <p>Realm of AI</p>
+            </div>
             </a>
-          </div>
-          <div class='item'>
+            <a href="algo.html">
+            <div class="image-container">
+                <h2>Algorithm</h2>
+                <img src="img/algo.png">
+                <p>Realm of Algorithm</p>
+            </div>
+            </a>
+            <!-- New Cards -->
             <a href="error.html">
-              <svg preserveAspectRatio='xMidYMid slice' viewBox='0 0 300 200'>
-                <defs>
-                  <clipPath id='clip-2'>
-                    <circle cx='0' cy='0' fill='#000' r='150px'></circle>
-                  </clipPath>
-                </defs>
-                <text class='svg-text' dy='.3em' x='50%' y='50%'>
-                  ALGORITHM
-                </text>
-                <g clip-path='url(#clip-2)'>
-                  <image height='100%' preserveAspectRatio='xMinYMin slice' width='100%' xlink:href='https://cdn.pixabay.com/photo/2022/01/17/13/49/blueprint-6944719_1280.jpg'></image>
-                  <text class='svg-masked-text' dy='.3em' x='50%' y='50%'>
-                    ALGORITHM
-                  </text>
-                </g>
-              </svg>
+            <div class="image-container">
+                <h2>Game Ai</h2>
+                <img src="img/nightmare_char-removebg-preview.png">
+                <p>Realm of Ai game</p>
+            </div>
             </a>
-          </div>
-        </div>
-        <!-- Second line with two boxes -->
-        <div class='items'>
-          <div class='item'>         
-            <a href="error.html">
-              <svg preserveAspectRatio='xMidYMid slice' viewBox='0 0 300 200'>
-                <defs>
-                  <clipPath id='clip-3'>
-                    <circle cx='0' cy='0' fill='#000' r='150px'></circle>
-                  </clipPath>
-                </defs>
-                <text class='svg-text' dy='.3em' x='50%' y='50%'>
-                  GAME-AI
-                </text>
-                <g clip-path='url(#clip-3)'>
-                  <image height='100%' preserveAspectRatio='xMinYMin slice' width='100%' xlink:href='https://cdn.pixabay.com/photo/2024/04/09/16/30/ai-generated-8686301_1280.jpg'></image>
-                  <text class='svg-masked-text' dy='.3em' x='50%' y='50%'>
-                    GAME-AI
-                  </text>
-                </g>
-              </svg>
-            </a>
-          </div>
-          <div class='item'>
             <a href="data.html">
-              <svg preserveAspectRatio='xMidYMid slice' viewBox='0 0 300 200'>
-                <defs>
-                  <clipPath id='clip-4'>
-                    <circle cx='0' cy='0' fill='#000' r='150px'></circle>
-                  </clipPath>
-                </defs>
-                <text class='svg-text' dy='.3em' x='50%' y='50%'>
-                  DATA VISUALIZATION
-                </text>
-                <g clip-path='url(#clip-4)'>
-                  <image height='100%' preserveAspectRatio='xMinYMin slice' width='100%' xlink:href='https://cdn.pixabay.com/photo/2017/09/06/21/31/data-2723105_1280.jpg'></image>
-                  <text class='svg-masked-text' dy='.3em' x='50%' y='50%'>
-                    DATA VISUALIZATION
-                  </text>
-                </g>
-              </svg>
+            <div class="image-container">
+                <h2>Illustrator</h2>
+                <img src="img/AI-20230417_01_Action_Figures__lilililili-removebg-preview.png">
+                <p>Realm of data visualizers.</p>
+            </div>
             </a>
-          </div>
+            <a href="https://venomusblood568.github.io/">
+            <div class="image-container">
+                <h2>Coming Soon</h2>
+                <img src="img/Little_Witch-removebg-preview.png" alt="AI Innovations">
+                <p>More added soon</p>
+            </div>
+            </a>
         </div>
-      </main>
-    </div>
-    <div class='options'>
-      <button class='dark'></button>
-      <button class='light'></button>
-    </div>
-    <footer>
-      <div>
-        <p></p>
-        <ul>
-          <li><a href="https://github.com/venomusblood568">Github</a></li>
-          <li><a href="https://x.com/Duckyatduck">X</a></li>
-          <li><a href="https://www.linkedin.com/in/gourav-anand-jha/">Linkedin</a></li>
-        </ul>
-      </div>
-    </footer>
-  </div>
-</div>
-<script src="./script.js"></script>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <h1>About</h1>
+        <div class="text-box" id="text-box">
+            <p>A while back, I got the idea to create a website called <em>Moonplay</em>. I started working on it during Buildspace Season 5. On this platform, I’ll be developing various types of games—because, honestly, it’s just fun! Along with that, I’ll be building AI projects and AI-based games. <em>Moonplay</em> will also feature algorithm visualizers and even data visualizers to bring complex concepts to life. Keep an eye on the <a href="timeline.html">timeline</a> as this project evolves into something exciting!</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h1>Contact</h1>
+        <div class="text-box" id="text-box">
+            <p style="text-align: center;">
+                <a href="https://www.linkedin.com/in/gourav-anand-jha/">Let's grab coffee, message me here.</a>
+            </p>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
 </body>
 </html>
